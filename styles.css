@@ -1,19 +1,22 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: #111;
 }
-body{
+
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.wrapper{
+
+.wrapper {
     position: relative;
     width: 50vh;
     height: 50vh;
@@ -25,7 +28,8 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-div{
+
+div {
     width: 10vh;
     height: 10vh;
     border: 1px solid gray;
@@ -33,7 +37,8 @@ div{
     padding: 45px;
     color: white;
 }
-button{
+
+button {
     width: 100px;
     border: 1px solid gray;
     border-radius: 3px;
@@ -43,22 +48,30 @@ button{
     color: white;
     cursor: pointer;
 }
-.points{
+
+.points {
     position: absolute;
     top: -100px;
     left: 0;
-    width: 200px;
-    height: 50px;
-    line-height: 0px;
+    width: 120px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    padding: 0;
 }
-.time{
+
+.time {
     position: absolute;
     top: -100px;
     right: 0;
-    width: 200px;
-    height: 20px;
-    line-height: 0px;
+    width: 120px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    padding: 0;
 }
-.toggle{
-    background-color: teal;
+
+button.start:disabled {
+    color: gray;
+    cursor: not-allowed;
 }
