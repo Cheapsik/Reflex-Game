@@ -3,10 +3,12 @@ const time = document.querySelector(".time-counter-placeholder");
 
 const divs = [...document.getElementsByClassName("div")];
 
-let timeCounter = 0;
+
+let timeCounter = 60;
+time.innerText = timeCounter;
 
 function startGame(){
-    setAll = setInterval(startingGame, 5000);
+    setAll = setInterval(startingGame, 1000);
     colorRandomDiv = setInterval(coloringDiv, 2000);
 }
 function coloringDiv(){
@@ -19,9 +21,13 @@ function coloringDiv(){
 }
 
 function startingGame() {
-    
-    // for(let i = 0; i>10 i++){
-    //     timeCounter += timeCounter;
-    // }
+         timeCounter = timeCounter -1;
+         time.innerText = timeCounter;
+         if(timeCounter === 0){
+                 timeCounter = 60;
+                 clearInterval(setAll);
+                 clearInterval(colorRandomDiv);
+                 alert("Time out!");
+         }
 }
 
