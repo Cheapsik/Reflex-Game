@@ -29,6 +29,7 @@ div{
     width: 10vh;
     height: 10vh;
     border: 1px solid gray;
+    border-radius: 6px;
     padding: 45px;
     color: white;
 }
@@ -57,4 +58,7 @@ button{
     width: 200px;
     height: 20px;
     line-height: 0px;
+}
+.toggle{
+    background-color: teal;
 }
