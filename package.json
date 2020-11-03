@@ -1,0 +1,11 @@
+{
+  "name": "reflex-game",
+  "version": "1.0.0",
+  "description": "Simple reflex game",
+  "main": "main.js",
+  "scripts": {
+    "start": "index.html"
+  },
+  "author": "Cheapsik",
+  "license": "ISC"
+}
