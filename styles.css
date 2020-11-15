@@ -11,6 +11,7 @@ html {
 
 body {
     height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,8 +19,8 @@ body {
 
 .wrapper {
     position: relative;
-    width: 50vh;
-    height: 50vh;
+    min-width: 50vh;
+    min-height: 50vh;
     background-color: transparent;
     border: 1px solid gray;
     border-radius: 6px;
@@ -34,7 +35,7 @@ div {
     height: 10vh;
     border: 1px solid gray;
     border-radius: 6px;
-    padding: 45px;
+    padding: 50px;
     color: white;
 }
 
@@ -75,3 +76,19 @@ button.start:disabled {
     color: gray;
     cursor: not-allowed;
 }
+
+@media (max-height: 850px){
+    .wrapper{
+        transform: scale(0.5);
+            width: 80%;
+            height: 80%; 
+    }
+}
+@media (max-height: 550px){
+    .wrapper{
+        transform: scale(0.3);
+            width: 80%;
+            height: 90%; 
+    }
+}
+

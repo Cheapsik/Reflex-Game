@@ -1,16 +1,29 @@
 const points = document.querySelector(".score");
 const time = document.querySelector(".time-counter-placeholder");
 const divs = [...document.getElementsByClassName("div")];
-
+const start = document.querySelector(".start");
+let gameInProgress = false;
 let score = 0;
 let timeCounter = 5;
 time.innerText = timeCounter;
 points.innerText = score;
 
+
 function startGame() {
   setAll = setInterval(startingGame, 1000);
-  colorRandomDiv = setInterval(coloringDiv, 2000);
+  colorRandomDiv = setInterval(coloringDiv, 1000);
   document.querySelector(".start").disabled = true;
+
+  const element = divs.forEach((div) => {
+    if (div.className !== "immortal") {
+      div.addEventListener("click", () => {
+       if(gameInProgress) {
+         rejectPoints();
+       }
+      });
+    }
+  });
+  
 }
 function addPoints() {
   score += 20;
@@ -21,11 +34,6 @@ function rejectPoints() {
   points.innerText = score;
 }
 
-const element = divs.forEach((div) => {
-  if (div.className !== "immortal") {
-    div.addEventListener("click", rejectPoints);
-  }
-});
 
 function coloringDiv() {
   const randomDiv = divs[Math.floor(divs.length * Math.random())];
@@ -41,25 +49,27 @@ function coloringDiv() {
     randomDiv.style.cursor = "default";
     randomDiv.removeEventListener("click", addPoints);
   }
-  setTimeout(removeClass, 2000);
+  setTimeout(removeClass, 500);
 }
 
 function startingGame() {
   timeCounter = timeCounter - 1;
   time.innerText = timeCounter;
+  gameInProgress = true;
   if (timeCounter === 0) {
     endGame();
   }
 }
 function endGame() {
   alert(`Time out! Your score is: ${score}`);
-  timeCounter = 60;
+  timeCounter = 5;
   score = 0;
   time.innerText = timeCounter;
   points.innerText = score;
   clearInterval(setAll);
   clearInterval(colorRandomDiv);
-  document.querySelector(".start").disabled = false;
+  start.disabled = false;
+  gameInProgress = false;
 }
 
 points.style.color = "darkgreen";
